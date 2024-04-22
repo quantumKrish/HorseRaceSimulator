@@ -296,18 +296,6 @@ public class Race
         }
     }
 
-    public String getWinnerName() {
-        if (raceWonBy(lane1Horse)) {
-            return lane1Horse.getName();
-        } else if (raceWonBy(lane2Horse)) {
-            return lane2Horse.getName();
-        } else if (raceWonBy(lane3Horse)) {
-            return lane3Horse.getName();
-        } else {
-            return "No winner";
-        }
-    }
-
 
     private void increaseConfidence(Horse theHorse) {
         double newConfidence = theHorse.getConfidence() + 0.05;
