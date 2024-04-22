@@ -1,0 +1,3 @@
+
+horseName horseSymbol horseCurrConfidence avrgConfidence avrgSpeed breed colour accessories winRatio
+
