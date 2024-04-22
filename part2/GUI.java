@@ -33,23 +33,28 @@ public class GUI extends JFrame {
     }
 
     private boolean checkAndCreateFiles() {
-        String folderPath = "C:\\HorseRaceSimulator\\part2\\saveFiles";
-        File horseFile = new File(folderPath + "\\horseDetails.txt");
-        File raceFile = new File(folderPath + "\\raceDetails.txt");
-
+        
+        String directoryPath = "C:\\Users\\kiris\\OneDrive\\Documents\\GitHub\\HorseRaceSimulator\\part2\\";
+        File horseFile = new File(directoryPath + "horseDetails.txt");
+        File raceFile = new File(directoryPath + "raceDetails.txt");
+    
         try {
-            // Create the directory if it doesn't exist
-            File folder = new File(folderPath);
-            if (!folder.exists()) {
-                folder.mkdirs(); // mkdirs() creates all parent directories if they don't exist
-            }
 
-            if (!horseFile.exists()) {
-                horseFile.createNewFile();
-            }
-            if (!raceFile.exists()) {
-                raceFile.createNewFile();
-            }
+    
+                if (horseFile.createNewFile()) {
+                    JOptionPane.showMessageDialog(GUI.this, "Horse file created: " + horseFile.getAbsolutePath());
+                } else {
+                    JOptionPane.showMessageDialog(GUI.this, "Horse file already exists.");
+                }
+            
+    
+                if (raceFile.createNewFile()) {
+                    JOptionPane.showMessageDialog(GUI.this, "Race file created: " + raceFile.getAbsolutePath());
+                } else {
+                    JOptionPane.showMessageDialog(GUI.this, "Race file already exists.");
+                }
+            
+    
             return true;
         } catch (IOException e) {
             e.printStackTrace();
@@ -57,13 +62,41 @@ public class GUI extends JFrame {
         }
     }
 
+
     private void openMainMenu() {
         JFrame newFrame = new JFrame("Horse Racing Simulator");
         newFrame.setSize(400, 300);
         newFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         newFrame.setLocationRelativeTo(null);
+    
+        JMenuBar menuBar = new JMenuBar();
+    
+        // Race menu
+        JMenu raceMenu = new JMenu("Race");
+        JMenuItem createRaceItem = new JMenuItem("Create Race");
+        JMenuItem startRaceItem = new JMenuItem("Start Race");
+        JMenuItem viewStatisticsItem = new JMenuItem("View Statistics");
+        raceMenu.add(createRaceItem);
+        raceMenu.add(startRaceItem);
+        raceMenu.add(viewStatisticsItem);
+    
+        // Horse menu
+        JMenu horseMenu = new JMenu("Horse");
+        JMenuItem createHorseItem = new JMenuItem("Create Horse");
+        JMenuItem editHorseItem = new JMenuItem("Edit Horse");
+        horseMenu.add(createHorseItem);
+        horseMenu.add(editHorseItem);
+    
+        // Add menus to menu bar
+        menuBar.add(raceMenu);
+        menuBar.add(horseMenu);
+    
+        // Set the menu bar for the frame
+        newFrame.setJMenuBar(menuBar);
+    
         newFrame.setVisible(true);
     }
+    
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
