@@ -1,4 +1,4 @@
-
+package horseRacingSim.part1;
 
 /**
  * Horse class contains the fields and methods for the horse object

@@ -31,15 +31,10 @@ public class Horse {
 
         fallen = true;
 
-        if (confidence - 0.05 < 0.01) {
-
-            confidence = 0.01;
-
-        } else {
-
-            confidence -= 0.05;
-            
-        }
+        double newConfidence = confidence - 0.05;
+        double roundedConfidence = Math.max(Math.round(newConfidence * 100.0) / 100.0, 0.01);
+        confidence = roundedConfidence;
+        
         return fallen;
     }
 
