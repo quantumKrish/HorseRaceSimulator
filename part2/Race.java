@@ -297,9 +297,11 @@ public class Race
 
 
     private void increaseConfidence(Horse theHorse) {
+
         double newConfidence = theHorse.getConfidence() + 0.05;
         double roundedConfidence = Math.min(Math.round(newConfidence * 100.0) / 100.0, 0.99);
         theHorse.setConfidence(roundedConfidence);
         System.out.println(String.format("%s new confidence: %.2f", theHorse.getName(), theHorse.getConfidence()));
+        
     }
 }

@@ -13,9 +13,16 @@ public class Horse {
     private int distance;
     private boolean fallen;
     private double confidence;
+    private String color;
+    private String breed;
+    private String accessories;
+    private double avrgSpeed;
+    private double winRatio;
+
 
     // Constructor for objects of class Horse
-    public Horse(char horseSymbol, String horseName, double horseConfidence) {
+    public Horse(char horseSymbol, String horseName, double horseConfidence, String horseColor, String horseBreed, 
+    String horseAccessories, double horseAvrgSpeed, double horseWinRatio) {
 
         setSymbol(horseSymbol);
         setName(horseName);
@@ -30,15 +37,10 @@ public class Horse {
 
         fallen = true;
 
-        if (confidence - 0.05 < 0.01) {
-
-            confidence = 0.01;
-
-        } else {
-
-            confidence -= 0.05;
-            
-        }
+        double newConfidence = confidence - 0.05;
+        double roundedConfidence = Math.max(Math.round(newConfidence * 100.0) / 100.0, 0.01);
+        confidence = roundedConfidence;
+        
         return fallen;
     }
 
@@ -108,4 +110,55 @@ public class Horse {
             throw new IllegalArgumentException("Name cannot be null or empty");
         }
     }
+
+    public String getColor() {
+
+        return color;
+    }
+
+    public String getBreed() {
+
+        return breed;
+    }
+
+    public String getAccessories() {
+
+        return accessories;
+    }
+
+    public double getAvrgSpeed() {
+
+        return avrgSpeed;
+    }
+
+    public double getWinRatio() {
+
+        return winRatio;
+    }
+
+    public void setColor(String horseColor) {
+
+        this.color = horseColor;
+    }
+
+    public void setBreed(String horseBreed) {
+
+        this.breed = horseBreed;
+    }
+
+    public void setAccessories(String horseAccessories) {
+
+        this.accessories = horseAccessories;
+    }
+
+    public void setAvrgSpeed(double horseAvrgSpeed) {
+
+        this.avrgSpeed = horseAvrgSpeed;
+    }
+
+    public void setWinRatio(double horseWinRatio) {
+
+        this.winRatio = horseWinRatio;
+    }
+
 }
