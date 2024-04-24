@@ -4,14 +4,21 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.util.ArrayList;
+
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
 
 public class GUI extends JFrame {
 
-    public GUI() {
+    public GUI
+() {
         setTitle("Simulator");
         setSize(300, 200);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
+        
 
         JButton startButton = new JButton("Start Simulator");
         startButton.addActionListener(new ActionListener() {
@@ -38,13 +45,11 @@ public class GUI extends JFrame {
 
     private boolean checkAndCreateFiles() {
         
-        String directoryPath = "C:\\HorseRaceSimulator\\part2\\";
+        String directoryPath = "part2" + File.separator;
         File horseFile = new File(directoryPath + "horseDetails.txt");
         File raceFile = new File(directoryPath + "raceDetails.txt");
     
         try {
-
-    
                 if (horseFile.createNewFile()) {
                     JOptionPane.showMessageDialog(GUI.this, "Horse file created: " + horseFile.getAbsolutePath());
                 } else {
@@ -78,25 +83,36 @@ public class GUI extends JFrame {
         // Race menu
         JMenu raceMenu = new JMenu("Race");
         JMenuItem createRaceItem = new JMenuItem("Create Race");
-        JMenuItem startRaceItem = new JMenuItem("Start Race");
-        JMenuItem viewStatisticsItem = new JMenuItem("View Statistics");
+        JMenuItem viewRaceHistoryItem = new JMenuItem("View Race History");
         raceMenu.add(createRaceItem);
-        raceMenu.add(startRaceItem);
-        raceMenu.add(viewStatisticsItem);
+        raceMenu.add(viewRaceHistoryItem);
     
         // Horse menu
         JMenu horseMenu = new JMenu("Horse");
         JMenuItem createHorseItem = new JMenuItem("Create Horse");
         JMenuItem editHorseItem = new JMenuItem("Edit Horse");
+        JMenuItem viewStatisticsItem = new JMenuItem("View Statistics");
+
         horseMenu.add(createHorseItem);
         horseMenu.add(editHorseItem);
+        horseMenu.add(viewStatisticsItem);
+
     
         // Add menus to menu bar
         menuBar.add(raceMenu);
         menuBar.add(horseMenu);
+
     
         // Set the menu bar for the frame
         newFrame.setJMenuBar(menuBar);
+
+        // Action listener for View Race History menu item
+        viewRaceHistoryItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openViewRaceHistoryDialog();
+            }
+        });
     
         // Action listener for Create Horse menu item
         createHorseItem.addActionListener(new ActionListener() {
@@ -121,11 +137,49 @@ public class GUI extends JFrame {
                 viewHorseStatistics();
             }
         });
+
+        // Inside the openMainMenu() method
+        createRaceItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openCreateRaceDialog();
+            }
+        });
     
         newFrame.setVisible(true);
     }
+
+    private void openViewRaceHistoryDialog() {
+
+        JFrame historyFrame = new JFrame("Race History");
+        JTextArea historyTextArea = new JTextArea();
+        JScrollPane scrollPane = new JScrollPane(historyTextArea);
+
+        historyTextArea.setEditable(false);
+        historyTextArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 14));
+
+        historyFrame.getContentPane().add(scrollPane, BorderLayout.CENTER);
+        historyFrame.setSize(600, 400);
+        historyFrame.setLocationRelativeTo(null);
+
+        // Read race details from file and display in text area
+        String directoryPath = "part2" + File.separator;
+        File raceFile = new File(directoryPath + "raceDetails.txt");
+        try (BufferedReader reader = new BufferedReader(new FileReader(raceFile))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                historyTextArea.append(line + "\n");
+            }
+        } catch (IOException ex) {
+            historyTextArea.setText("Error reading race history.");
+        }
+
+        historyFrame.setVisible(true);
+    }
+
     
     private void openCreateHorseDialog() {
+
         JDialog createHorseDialog = new JDialog();
         createHorseDialog.setTitle("Create Horse");
         createHorseDialog.setSize(300, 400);
@@ -175,19 +229,22 @@ public class GUI extends JFrame {
 
                 // Retrieve values from fields
                 String name = nameField.getText();
-                String symbol = symbolField.getText(); 
-                double confidence = Math.round((double) confidenceSpinner.getValue() * 100.0) / 100.0;
+                String symbol = symbolField.getText();
+                double confidence = (double) Math.max(Math.round(((Double) confidenceSpinner.getValue()) * 100.0) / 100.0, 0.01);
                 String color = (String) colorComboBox.getSelectedItem();
                 String breed = (String) breedComboBox.getSelectedItem();
                 String accessories = (String) accessoriesComboBox.getSelectedItem();
     
+                String directoryPath = "part2" + File.separator;
+                File horseFile = new File(directoryPath + "horseDetails.txt");
+
                 // Write horse details to file
                 try (   
 
-                    FileWriter writer = new FileWriter("C:\\Users\\kiris\\OneDrive\\Documents\\GitHub\\HorseRaceSimulator\\part2\\horseDetails.txt", true);
+                    FileWriter writer = new FileWriter(horseFile, true);
                     BufferedWriter bw = new BufferedWriter(writer);
                     PrintWriter out = new PrintWriter(bw)) {
-                    out.println(name + "," + symbol + "," + confidence + "," + color + "," + breed + "," + accessories + ",0" + ",0");
+                    out.println(name + "," + symbol + "," + confidence + "," + color + "," + breed + "," + accessories + ",15" + ",0.5");
                     JOptionPane.showMessageDialog(GUI.this, "Horse created successfully!");
 
                 } catch (IOException ex) {
@@ -303,7 +360,7 @@ public class GUI extends JFrame {
                 // Get the updated values
                 String updatedName = nameField.getText();
                 String updatedSymbol = symbolField.getText();
-                double updatedConfidence = Math.round((double) confidenceSpinner.getValue() * 100.0) / 100.0;
+                double updatedConfidence = (double) confidenceSpinner.getValue();
                 String updatedColor = (String) colorComboBox.getSelectedItem();
                 String updatedBreed = (String) breedComboBox.getSelectedItem();
                 String updatedAccessories = (String) accessoriesComboBox.getSelectedItem();
@@ -327,10 +384,11 @@ public class GUI extends JFrame {
     }
 
     private String[] readHorsesFromFile() {
-        String filePath = "C:\\Users\\kiris\\OneDrive\\Documents\\GitHub\\HorseRaceSimulator\\part2\\horseDetails.txt";
+        String directoryPath = "part2" + File.separator;
+        File horseFile = new File(directoryPath + "horseDetails.txt");        
         String[] horses = new String[0];
 
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(horseFile))) {
             String line;
             int count = 0;
             while ((line = br.readLine()) != null) {
@@ -339,7 +397,7 @@ public class GUI extends JFrame {
 
             horses = new String[count];
             br.close();
-            BufferedReader br2 = new BufferedReader(new FileReader(filePath));
+            BufferedReader br2 = new BufferedReader(new FileReader(horseFile));
             int index = 0;
             while ((line = br2.readLine()) != null) {
                 horses[index] = line;
@@ -354,8 +412,9 @@ public class GUI extends JFrame {
 
     private void updateHorseInFile(String oldHorse, String updatedHorse) {
 
-        String filePath = "C:\\Users\\kiris\\OneDrive\\Documents\\GitHub\\HorseRaceSimulator\\part2\\horseDetails.txt";
-        String tempFile = "C:\\Users\\kiris\\OneDrive\\Documents\\GitHub\\HorseRaceSimulator\\part2\\tempHorseDetails.txt";
+        String directoryPath = "part2" + File.separator;
+        File filePath = new File(directoryPath + "horseDetails.txt");
+        File tempFile = new File(directoryPath + "tempHorseDetails.txt");
     
         try (BufferedReader br = new BufferedReader(new FileReader(filePath));
              BufferedWriter bw = new BufferedWriter(new FileWriter(tempFile))) {
@@ -374,14 +433,14 @@ public class GUI extends JFrame {
         }
     
         // Delete the original file
-        File oldFile = new File(filePath);
+        File oldFile = new File(filePath.getPath());
         if (!oldFile.delete()) {
             System.out.println("Could not delete original file.");
             return;
         }
     
         // Rename the temp file to the original file name
-        File newFile = new File(tempFile);
+        File newFile = new File(tempFile.getPath());
         if (!newFile.renameTo(oldFile)) {
             System.out.println("Could not rename temp file to original file name.");
         }
@@ -396,7 +455,10 @@ public class GUI extends JFrame {
         JTextArea statsTextArea = new JTextArea();
         statsTextArea.setEditable(false);
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\kiris\\OneDrive\\Documents\\GitHub\\HorseRaceSimulator\\part2\\horseDetails.txt"))) {
+        String directoryPath = "part2" + File.separator;
+        File horseFile = new File(directoryPath + "horseDetails.txt");
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(horseFile))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] horseDetails = line.split(",");
@@ -424,14 +486,157 @@ public class GUI extends JFrame {
         statisticsFrame.setVisible(true);
     }
     
+// Method to open the Create Race dialog
+private void openCreateRaceDialog() {
+    JFrame parentFrame = new JFrame();
+    JDialog createRaceDialog = new JDialog(parentFrame, "Create Race", Dialog.ModalityType.APPLICATION_MODAL);
+    createRaceDialog.setSize(400, 400);
+    createRaceDialog.setLayout(new BorderLayout());
+    ArrayList<String> selectedHorseDetail = new ArrayList<>();
+
+
+    JPanel racePanel = new JPanel(new FlowLayout());
+
+    // Slider for race length
+    JLabel lengthLabel = new JLabel("Race Length:");
+    JSlider raceLengthSlider = new JSlider(JSlider.HORIZONTAL, 1, 50, 1);
+    raceLengthSlider.setMajorTickSpacing(5);
+    raceLengthSlider.setPaintTicks(true);
+    raceLengthSlider.setPaintLabels(true);
     
+    // Label to display current slider value
+    JLabel valueLabel = new JLabel("Race Length: " + raceLengthSlider.getValue());
+    
+    // ChangeListener to update valueLabel when slider value changes
+    raceLengthSlider.addChangeListener(new ChangeListener() {
+        @Override
+        public void stateChanged(ChangeEvent e) {
+            valueLabel.setText("Race Length: " + raceLengthSlider.getValue());
+        }
+    });
+    
+    racePanel.add(lengthLabel);
+    racePanel.add(raceLengthSlider);
+    racePanel.add(valueLabel);
+
+    // Button to add horse
+    JButton addHorseButton = new JButton("Add Horse");
+    racePanel.add(addHorseButton);
+
+    // List to display added horses
+    DefaultListModel<String> horseListModel = new DefaultListModel<>();
+    JList<String> horseList = new JList<>(horseListModel);
+    horseListModel.addElement("Horses added (minimum 2)");
+    JScrollPane horseScrollPane = new JScrollPane(horseList);
+    racePanel.add(horseScrollPane);
+
+    addHorseButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JFrame parentFrame = new JFrame();
+            JDialog addHorseDialog = new JDialog(parentFrame, "Add Horse", Dialog.ModalityType.APPLICATION_MODAL);
+            addHorseDialog.setSize(300, 300);
+            addHorseDialog.setLayout(new BorderLayout());
+
+            JPanel horseListPanel = new JPanel();
+            horseListPanel.setLayout(new BoxLayout(horseListPanel, BoxLayout.Y_AXIS));
+
+            String[] horses = readHorsesFromFile();
+
+            // Create clickable labels for each horse
+            for (String horse : horses) {
+                JLabel horseLabel = new JLabel(horse.split(",")[0]); // Display horse name
+                horseLabel.setBorder(BorderFactory.createCompoundBorder(
+                        BorderFactory.createLineBorder(Color.BLACK),
+                        BorderFactory.createEmptyBorder(5, 5, 5, 5)
+                ));
+                horseLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                horseLabel.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        horseListModel.addElement(horseLabel.getText());
+
+                        String horseDetail = horse.split(",")[0] + "," + horse.split(",")[1] + "," + horse.split(",")[2] + "," +
+                            horse.split(",")[3] + "," + horse.split(",")[4] + "," + horse.split(",")[5] + "," + horse.split(",")[6] +
+                            "," + horse.split(",")[7];
+
+                        selectedHorseDetail.add(horseDetail);
+                        System.out.println(selectedHorseDetail);
+
+
+                        addHorseDialog.dispose();
+                    }
+                });
+                horseListPanel.add(horseLabel);
+            }
+
+            addHorseDialog.add(horseListPanel, BorderLayout.CENTER);
+
+            addHorseDialog.setVisible(true);
+        }
+    });
+
+    // Button to start race
+    JButton startRaceButton = new JButton("Start Race");
+    racePanel.add(startRaceButton);
+
+    createRaceDialog.add(racePanel, BorderLayout.CENTER);
+
+    startRaceButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // Get race length from the slider
+            int raceLength = raceLengthSlider.getValue();
+
+            // Check if there are at least 2 horses added
+            if (selectedHorseDetail.size() < 2) {
+                JOptionPane.showMessageDialog(createRaceDialog, "Minimum 2 horses required to start the race.");
+                return;
+            }
+
+            try {
+            // Create Race object and add selected horses
+            Race race = new Race(raceLength);
+            for (String horseDetail : selectedHorseDetail) {
+                String[] horseDetails = horseDetail.split(",");
+                Horse horse = new Horse(
+                        horseDetails[0], // Name
+                        horseDetails[1], // Symbol
+                        Double.parseDouble(horseDetails[2]), // Confidence 
+                        horseDetails[3], // Color
+                        horseDetails[4], // Breed
+                        horseDetails[5], // Accessories
+                        Double.parseDouble(horseDetails[6]), // Speed
+                        Double.parseDouble(horseDetails[7]) // winRate
+                    );
+                race.addHorse(horse);
+            }
+
+            Race.RaceWindow raceWindow = new Race.RaceWindow();
+            raceWindow.setVisible(true);
+            race.startRace(raceWindow.raceTextArea);
+
+            } catch (IllegalArgumentException ex) {
+                JOptionPane.showMessageDialog(createRaceDialog, ex.getMessage());
+            }
+        }
+    });  
+
+    createRaceDialog.setVisible(true);
+    
+}
+
+
+
+    
+
+
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new GUI
-            ();
+                new GUI();
             }
         });
     }

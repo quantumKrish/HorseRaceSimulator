@@ -1,0 +1,40 @@
+
+Race Details
+Date: 2024-04-24 14:22:09
+Race Status: Win
+Race length: 17
+Winner: ebarbs
+Participants:
+goblin Fallen: false Distance Travelled: 15
+ebarbs Fallen: false Distance Travelled: 17
+mega knight Fallen: false Distance Travelled: 6
+archer Fallen: false Distance Travelled: 8
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-24 14:26:06
+Race Status: Draw
+Race length: 1
+Drawers: archer
+ebarbs
+Participants:
+archer Fallen: false Distance Travelled: 1
+goblin Fallen: false Distance Travelled: 0
+mega knight Fallen: false Distance Travelled: 0
+ebarbs Fallen: true Distance Travelled: 1
+wizard Fallen: false Distance Travelled: 0
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-24 16:00:25
+Race Status: Win
+Race length: 21
+Winner: goblin
+Participants:
+mohit Fallen: true Distance Travelled: 17
+wizard Fallen: true Distance Travelled: 8
+goblin Fallen: false Distance Travelled: 21
+-------------------------------------------------------
+

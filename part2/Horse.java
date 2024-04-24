@@ -2,6 +2,7 @@
 /**
  * Horse class contains the fields and methods for the horse object
  * 
+ * 
  * @author Kirishanth Pirathapan 
  * @version (18/03/2024)
  */
@@ -9,7 +10,7 @@ public class Horse {
 
     // Fields of class Horse
     private String name;
-    private char symbol;
+    private String symbol;
     private int distance;
     private boolean fallen;
     private double confidence;
@@ -21,7 +22,7 @@ public class Horse {
 
 
     // Constructor for objects of class Horse
-    public Horse(char horseSymbol, String horseName, double horseConfidence, String horseColor, String horseBreed, 
+    public Horse(String horseName, String horseSymbol, double horseConfidence, String horseColor, String horseBreed, 
     String horseAccessories, double horseAvrgSpeed, double horseWinRatio) {
 
         setSymbol(horseSymbol);
@@ -29,6 +30,11 @@ public class Horse {
         setConfidence(horseConfidence);
         goBackToStart();
         fallen = false;
+        setColor(horseColor);
+        setBreed(horseBreed);
+        setAccessories(horseAccessories);
+        setAvrgSpeed(horseAvrgSpeed);
+        setWinRatio(horseWinRatio);
 
     }
 
@@ -64,7 +70,7 @@ public class Horse {
         return name;
     }
 
-    public char getSymbol() {
+    public String getSymbol() {
 
         return symbol;
     }
@@ -92,7 +98,7 @@ public class Horse {
         }
     }
 
-    public void setSymbol(char horseSymbol) {
+    public void setSymbol(String horseSymbol) {
 
         this.symbol = horseSymbol;
     }

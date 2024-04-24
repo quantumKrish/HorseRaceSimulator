@@ -1,0 +1,6 @@
+goblin,ğŸ‘º,0.55,Green,Mule,Enhanced Blinders,15,0.5
+archer,ğŸ?¹,0.4,Pink,Appaloosa,Racing Saddle,15,0.5
+mega knight,â™,0.35,Black,Quarter Horse,No Accessory,15,0.5
+ebarbs,ğŸ’ªğŸ?¼,0.65,Yellow,Arabian,Pegasis Wings,15,0.5
+wizard,ğŸ§™â€?â™‚ï¸?,0.5,Blue,Connemara Pony,Lucky Horseshoe,15,0.5
+mohit,M,0.6,Gold,Akhal-Teke,Golden Hooves,22.0,0.45
