@@ -67,6 +67,8 @@ public class Race {
         oldHorseDetails.add(oldHorse);
     }
 
+    
+
     /**
      * Start the race
      * The horses are brought to the start and
@@ -75,6 +77,7 @@ public class Race {
      */
     public void startRace(JTextArea raceTextArea) {
         this.raceTextArea = raceTextArea;
+
 
         if (numHorses < 2) {
             throw new IllegalArgumentException("Minimum of 2 horses required to start the race.");
@@ -298,9 +301,12 @@ public class Race {
     
         try (BufferedReader br = new BufferedReader(new FileReader(filePath));
              BufferedWriter bw = new BufferedWriter(new FileWriter(tempFile))) {
+                
     
             String line;
+            
             while ((line = br.readLine()) != null) {
+
                 if (line.equals(oldHorse)) {
                     bw.write(updatedHorse);
                 } else {
@@ -399,7 +405,6 @@ private void decreaseWinRatio(Horse theHorse) {
         double newConfidence = theHorse.getConfidence() + 0.05;
         double roundedConfidence = Math.min(Math.round(newConfidence * 100.0) / 100.0, 0.99);
         theHorse.setConfidence(roundedConfidence);
-        System.out.println(String.format("%s new confidence: %.2f", theHorse.getName(), theHorse.getConfidence()));
     }
 
     private void appendRacePositions() {

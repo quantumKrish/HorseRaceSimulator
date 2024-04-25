@@ -1,6 +1,10 @@
-goblin,ðŸ‘º,0.55,Green,Mule,Enhanced Blinders,15,0.5
-archer,ðŸ?¹,0.4,Pink,Appaloosa,Racing Saddle,15,0.5
-mega knight,â™ž,0.35,Black,Quarter Horse,No Accessory,15,0.5
-ebarbs,ðŸ’ªðŸ?¼,0.65,Yellow,Arabian,Pegasis Wings,15,0.5
-wizard,ðŸ§™â€?â™‚ï¸?,0.5,Blue,Connemara Pony,Lucky Horseshoe,15,0.5
-mohit,M,0.6,Gold,Akhal-Teke,Golden Hooves,22.0,0.45
+goblin,G,0.55,Gold,Mule,Enhanced Blinders,27.625,0.5
+archer,A,0.3,Pink,Appaloosa,Racing Saddle,17.5,0.4
+mega knight,M,0.35,Black,Quarter Horse,No Accessory,18.0,0.5
+ebarbs,E,0.6,Yellow,Arabian,Pegasis Wings,27.875,0.45
+wizard,W,0.55,Blue,Connemara Pony,Lucky Horseshoe,24.0,0.55
+hog rider,H,0.65,Brown,Akhal-Teke,Enchanted Saddle,30.90625,0.5
+log,L,0.5,Orange,Gypsy Vanner,No Accessory,15,0.5
+egiant,E,0.35,Blue,Thoroughbred,Enhanced Blinders,18.0,0.5
+ice spirit,I,0.56,White,Arabian,Golden Hooves,15.0,0.5
+musketeer,M,0.4,Purple,Connemara Pony,Enhanced Blinders,18.0,0.5

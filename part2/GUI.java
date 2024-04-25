@@ -244,7 +244,7 @@ public class GUI extends JFrame {
                     FileWriter writer = new FileWriter(horseFile, true);
                     BufferedWriter bw = new BufferedWriter(writer);
                     PrintWriter out = new PrintWriter(bw)) {
-                    out.println(name + "," + symbol + "," + confidence + "," + color + "," + breed + "," + accessories + ",15" + ",0.5");
+                    out.println(name + "," + symbol + "," + confidence + "," + color + "," + breed + "," + accessories + ",15.0" + ",0.5");
                     JOptionPane.showMessageDialog(GUI.this, "Horse created successfully!");
 
                 } catch (IOException ex) {
@@ -489,7 +489,7 @@ public class GUI extends JFrame {
 // Method to open the Create Race dialog
 private void openCreateRaceDialog() {
     JFrame parentFrame = new JFrame();
-    JDialog createRaceDialog = new JDialog(parentFrame, "Create Race", Dialog.ModalityType.APPLICATION_MODAL);
+    JDialog createRaceDialog = new JDialog(parentFrame, "Create Race", Dialog.ModalityType.DOCUMENT_MODAL);
     createRaceDialog.setSize(400, 400);
     createRaceDialog.setLayout(new BorderLayout());
     ArrayList<String> selectedHorseDetail = new ArrayList<>();
@@ -561,7 +561,6 @@ private void openCreateRaceDialog() {
                             "," + horse.split(",")[7];
 
                         selectedHorseDetail.add(horseDetail);
-                        System.out.println(selectedHorseDetail);
 
 
                         addHorseDialog.dispose();
@@ -570,7 +569,9 @@ private void openCreateRaceDialog() {
                 horseListPanel.add(horseLabel);
             }
 
-            addHorseDialog.add(horseListPanel, BorderLayout.CENTER);
+
+            JScrollPane scrollPane = new JScrollPane(horseListPanel);
+            addHorseDialog.add(scrollPane, BorderLayout.CENTER);
 
             addHorseDialog.setVisible(true);
         }
@@ -615,6 +616,8 @@ private void openCreateRaceDialog() {
             Race.RaceWindow raceWindow = new Race.RaceWindow();
             raceWindow.setVisible(true);
             race.startRace(raceWindow.raceTextArea);
+
+
 
             } catch (IllegalArgumentException ex) {
                 JOptionPane.showMessageDialog(createRaceDialog, ex.getMessage());
