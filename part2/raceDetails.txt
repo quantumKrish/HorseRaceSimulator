@@ -444,3 +444,346 @@ ebarbs Fallen: false Distance Travelled: 1
 hog rider Fallen: false Distance Travelled: 1
 -------------------------------------------------------
 
+
+Race Details
+Date: 2024-04-25 18:48:54
+Race Status: Win
+Race length: 10
+Winner: log
+Participants:
+goblin Fallen: true Distance Travelled: 3
+log Fallen: false Distance Travelled: 10
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 18:51:41
+Race Status: Win
+Race length: 8
+Winner: goblin
+Participants:
+goblin Fallen: false Distance Travelled: 8
+archer Fallen: true Distance Travelled: 3
+mega knight Fallen: false Distance Travelled: 5
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 18:58:13
+Race Status: Win
+Race length: 8
+Winner: goblin
+Participants:
+goblin Fallen: false Distance Travelled: 8
+archer Fallen: false Distance Travelled: 1
+mega knight Fallen: false Distance Travelled: 5
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 18:58:31
+Race Status: Win
+Race length: 8
+Winner: goblin
+Participants:
+goblin Fallen: false Distance Travelled: 8
+archer Fallen: true Distance Travelled: 5
+mega knight Fallen: false Distance Travelled: 5
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 18:59:43
+Race Status: Win
+Race length: 11
+Winner: goblin
+Participants:
+goblin Fallen: false Distance Travelled: 11
+archer Fallen: false Distance Travelled: 6
+mega knight Fallen: true Distance Travelled: 6
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 19:04:37
+Race Status: Win
+Race length: 16
+Winner: mega knight
+Participants:
+goblin Fallen: true Distance Travelled: 9
+mega knight Fallen: false Distance Travelled: 16
+archer Fallen: true Distance Travelled: 5
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 19:07:47
+Race Status: Win
+Race length: 18
+Winner: mega knight
+Participants:
+goblin Fallen: true Distance Travelled: 4
+archer Fallen: false Distance Travelled: 6
+mega knight Fallen: false Distance Travelled: 18
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 19:08:35
+Race Status: Win
+Race length: 13
+Winner: mega knight
+Participants:
+goblin Fallen: true Distance Travelled: 0
+archer Fallen: false Distance Travelled: 4
+mega knight Fallen: false Distance Travelled: 13
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 19:08:51
+Race Status: All Lose
+Race length: 13
+Participants:
+goblin Fallen: true Distance Travelled: 2
+archer Fallen: true Distance Travelled: 3
+mega knight Fallen: true Distance Travelled: 2
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 19:09:02
+Race Status: Win
+Race length: 13
+Winner: goblin
+Participants:
+goblin Fallen: false Distance Travelled: 13
+archer Fallen: true Distance Travelled: 3
+mega knight Fallen: true Distance Travelled: 3
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 19:10:00
+Race Status: Win
+Race length: 13
+Winner: goblin
+Participants:
+goblin Fallen: false Distance Travelled: 13
+archer Fallen: false Distance Travelled: 10
+mega knight Fallen: true Distance Travelled: 9
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 19:10:17
+Race Status: Win
+Race length: 13
+Winner: mega knight
+Participants:
+goblin Fallen: true Distance Travelled: 2
+archer Fallen: false Distance Travelled: 5
+mega knight Fallen: false Distance Travelled: 13
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 19:10:47
+Race Status: Win
+Race length: 13
+Winner: archer
+Participants:
+goblin Fallen: true Distance Travelled: 8
+archer Fallen: false Distance Travelled: 13
+mega knight Fallen: true Distance Travelled: 4
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 19:15:45
+Race Status: Win
+Race length: 15
+Winner: archer
+Participants:
+goblin Fallen: true Distance Travelled: 1
+archer Fallen: false Distance Travelled: 15
+mega knight Fallen: true Distance Travelled: 14
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 19:21:18
+Race Status: Win
+Race length: 8
+Winner: goblin
+Participants:
+goblin Fallen: false Distance Travelled: 8
+archer Fallen: false Distance Travelled: 4
+mega knight Fallen: false Distance Travelled: 6
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 19:21:30
+Race Status: Win
+Race length: 8
+Winner: goblin
+Participants:
+goblin Fallen: false Distance Travelled: 8
+archer Fallen: false Distance Travelled: 3
+mega knight Fallen: false Distance Travelled: 3
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 19:21:39
+Race Status: Win
+Race length: 8
+Winner: mega knight
+Participants:
+goblin Fallen: true Distance Travelled: 1
+archer Fallen: false Distance Travelled: 7
+mega knight Fallen: false Distance Travelled: 8
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 19:23:05
+Race Status: Win
+Race length: 12
+Winner: goblin
+Participants:
+goblin Fallen: false Distance Travelled: 12
+archer Fallen: false Distance Travelled: 2
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 19:26:54
+Race Status: Win
+Race length: 13
+Winner: goblin
+Participants:
+goblin Fallen: false Distance Travelled: 13
+archer Fallen: false Distance Travelled: 2
+mega knight Fallen: true Distance Travelled: 1
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 19:29:40
+Race Status: Draw
+Race length: 1
+Drawers: goblin
+mega knight
+Participants:
+archer Fallen: false Distance Travelled: 0
+goblin Fallen: false Distance Travelled: 1
+mega knight Fallen: false Distance Travelled: 1
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 19:30:14
+Race Status: Win
+Race length: 7
+Winner: goblin
+Participants:
+archer Fallen: true Distance Travelled: 6
+goblin Fallen: false Distance Travelled: 7
+mega knight Fallen: true Distance Travelled: 1
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 20:07:27
+Race Status: Win
+Race length: 11
+Winner: archer
+Participants:
+goblin Fallen: true Distance Travelled: 5
+archer Fallen: false Distance Travelled: 11
+mega knight Fallen: false Distance Travelled: 8
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 20:09:55
+Race Status: Win
+Race length: 12
+Winner: goblin
+Participants:
+goblin Fallen: false Distance Travelled: 12
+archer Fallen: false Distance Travelled: 1
+mega knight Fallen: false Distance Travelled: 1
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 20:10:08
+Race Status: Win
+Race length: 12
+Winner: goblin
+Participants:
+goblin Fallen: false Distance Travelled: 12
+archer Fallen: false Distance Travelled: 7
+mega knight Fallen: false Distance Travelled: 5
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 20:10:44
+Race Status: Win
+Race length: 12
+Winner: archer
+Participants:
+goblin Fallen: true Distance Travelled: 1
+archer Fallen: false Distance Travelled: 12
+mega knight Fallen: true Distance Travelled: 3
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 20:11:10
+Race Status: Win
+Race length: 12
+Winner: mega knight
+Participants:
+goblin Fallen: true Distance Travelled: 5
+archer Fallen: false Distance Travelled: 9
+mega knight Fallen: false Distance Travelled: 12
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 20:11:22
+Race Status: All Lose
+Race length: 12
+Participants:
+goblin Fallen: true Distance Travelled: 5
+archer Fallen: true Distance Travelled: 4
+mega knight Fallen: true Distance Travelled: 6
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 20:14:37
+Race Status: Win
+Race length: 11
+Winner: goblin
+Participants:
+goblin Fallen: false Distance Travelled: 11
+archer Fallen: false Distance Travelled: 4
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-25 20:16:23
+Race Status: Win
+Race length: 8
+Winner: goblin
+Participants:
+goblin Fallen: false Distance Travelled: 8
+archer Fallen: false Distance Travelled: 2
+-------------------------------------------------------
+

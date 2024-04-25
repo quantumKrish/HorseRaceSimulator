@@ -1,4 +1,4 @@
-package horseRacingSim.part1;
+package part1;
 
 import java.util.concurrent.TimeUnit;
 import java.lang.Math;
@@ -222,6 +222,7 @@ public class Race
     private void printRace()
     {
         // Clear the screen
+        System.out.print("\033[H\033[2J");
 
         multiplePrint('=',raceLength + 3); //top edge of track
         System.out.println();
@@ -276,7 +277,7 @@ public class Race
         System.out.print('|');
 
         // Print the horse's name and confidence rating
-        System.out.print(" " + theHorse.getName() + " (Current confidence: " + theHorse.getConfidence() + ")");
+        System.out.print(" " + theHorse.getName() + " (Current confidence: " + Math.round(theHorse.getConfidence() * 100.0) / 100.0 + ")");
     }
         
     
