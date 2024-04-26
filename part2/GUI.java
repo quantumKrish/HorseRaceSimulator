@@ -613,7 +613,7 @@ private void openCreateRaceDialog() {
                 race.addHorse(horse);
             }
 
-            Race.RaceWindow raceWindow = new Race.RaceWindow();
+            Race.RaceWindow raceWindow = new Race.RaceWindow(createRaceDialog);
             raceWindow.setVisible(true);
             race.startRace(raceWindow.raceTextArea);
 

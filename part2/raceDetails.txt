@@ -787,3 +787,410 @@ goblin Fallen: false Distance Travelled: 8
 archer Fallen: false Distance Travelled: 2
 -------------------------------------------------------
 
+
+Race Details
+Date: 2024-04-25 21:16:35
+Race Status: Win
+Race length: 23
+Winner: mega knight
+Participants:
+goblin Fallen: true Distance Travelled: 9
+mega knight Fallen: false Distance Travelled: 23
+hog rider Fallen: true Distance Travelled: 1
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 05:39:36
+Race Status: Win
+Race length: 9
+Winner: ice spirit
+Participants:
+zap Fallen: false Distance Travelled: 3
+wizard Fallen: true Distance Travelled: 2
+egiant Fallen: false Distance Travelled: 3
+ice spirit Fallen: false Distance Travelled: 9
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 05:40:39
+Race Status: Win
+Race length: 9
+Winner: ice spirit
+Participants:
+zap Fallen: true Distance Travelled: 3
+wizard Fallen: true Distance Travelled: 5
+egiant Fallen: false Distance Travelled: 6
+ice spirit Fallen: false Distance Travelled: 9
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 05:40:53
+Race Status: Win
+Race length: 9
+Winner: ice spirit
+Participants:
+zap Fallen: true Distance Travelled: 7
+wizard Fallen: false Distance Travelled: 6
+egiant Fallen: false Distance Travelled: 3
+ice spirit Fallen: false Distance Travelled: 9
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 05:44:18
+Race Status: Win
+Race length: 9
+Winner: archer
+Participants:
+goblin Fallen: true Distance Travelled: 8
+archer Fallen: false Distance Travelled: 9
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 05:46:59
+Race Status: Win
+Race length: 1
+Winner: archer
+Participants:
+goblin Fallen: false Distance Travelled: 0
+archer Fallen: false Distance Travelled: 1
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 05:48:15
+Race Status: Win
+Race length: 9
+Winner: ebarbs
+Participants:
+ebarbs Fallen: false Distance Travelled: 9
+wizard Fallen: false Distance Travelled: 5
+hog rider Fallen: false Distance Travelled: 4
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 05:50:57
+Race Status: Win
+Race length: 9
+Winner: ebarbs
+Participants:
+hog rider Fallen: true Distance Travelled: 3
+wizard Fallen: true Distance Travelled: 2
+ebarbs Fallen: false Distance Travelled: 9
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 05:52:38
+Race Status: Win
+Race length: 9
+Winner: wizard
+Participants:
+goblin Fallen: true Distance Travelled: 4
+wizard Fallen: false Distance Travelled: 9
+archer Fallen: true Distance Travelled: 0
+mega knight Fallen: false Distance Travelled: 6
+ebarbs Fallen: true Distance Travelled: 4
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 05:58:22
+Race Status: All Lose
+Race length: 12
+Participants:
+mega knight Fallen: true Distance Travelled: 1
+ebarbs Fallen: true Distance Travelled: 3
+wizard Fallen: true Distance Travelled: 8
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 05:59:49
+Race Status: All Lose
+Race length: 15
+Participants:
+mega knight Fallen: true Distance Travelled: 0
+ebarbs Fallen: true Distance Travelled: 12
+wizard Fallen: true Distance Travelled: 2
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:01:26
+Race Status: All Lose
+Race length: 13
+Participants:
+zap Fallen: true Distance Travelled: 7
+musketeer Fallen: true Distance Travelled: 7
+ice spirit Fallen: true Distance Travelled: 0
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:06:58
+Race Status: All Lose
+Race length: 14
+Participants:
+zap Fallen: true Distance Travelled: 2
+musketeer Fallen: true Distance Travelled: 0
+ice spirit Fallen: true Distance Travelled: 12
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:07:34
+Race Status: Win
+Race length: 14
+Winner: musketeer
+Participants:
+zap Fallen: true Distance Travelled: 0
+musketeer Fallen: false Distance Travelled: 14
+ice spirit Fallen: true Distance Travelled: 11
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:13:39
+Race Status: Win
+Race length: 13
+Winner: ice spirit
+Participants:
+musketeer Fallen: false Distance Travelled: 11
+zap Fallen: true Distance Travelled: 2
+ice spirit Fallen: false Distance Travelled: 13
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:17:23
+Race Status: Win
+Race length: 10
+Winner: ice spirit
+Participants:
+ice spirit Fallen: false Distance Travelled: 10
+musketeer Fallen: true Distance Travelled: 7
+zap Fallen: false Distance Travelled: 7
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:22:22
+Race Status: Win
+Race length: 11
+Winner: ice spirit
+Participants:
+ice spirit Fallen: false Distance Travelled: 11
+musketeer Fallen: false Distance Travelled: 6
+zap Fallen: false Distance Travelled: 8
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:24:55
+Race Status: Win
+Race length: 13
+Winner: ice spirit
+Participants:
+zap Fallen: false Distance Travelled: 11
+ice spirit Fallen: false Distance Travelled: 13
+musketeer Fallen: false Distance Travelled: 3
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:30:26
+Race Status: Win
+Race length: 11
+Winner: ice spirit
+Participants:
+zap Fallen: true Distance Travelled: 5
+musketeer Fallen: false Distance Travelled: 1
+ice spirit Fallen: false Distance Travelled: 11
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:32:31
+Race Status: All Lose
+Race length: 16
+Participants:
+zap Fallen: true Distance Travelled: 5
+musketeer Fallen: true Distance Travelled: 12
+ice spirit Fallen: true Distance Travelled: 5
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:33:53
+Race Status: Win
+Race length: 16
+Winner: musketeer
+Participants:
+zap Fallen: true Distance Travelled: 11
+musketeer Fallen: false Distance Travelled: 16
+ice spirit Fallen: true Distance Travelled: 7
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:37:25
+Race Status: Win
+Race length: 9
+Winner: ice spirit
+Participants:
+musketeer Fallen: false Distance Travelled: 4
+zap Fallen: false Distance Travelled: 2
+ice spirit Fallen: false Distance Travelled: 9
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:38:22
+Race Status: Win
+Race length: 9
+Winner: zap
+Participants:
+musketeer Fallen: false Distance Travelled: 5
+zap Fallen: false Distance Travelled: 9
+ice spirit Fallen: true Distance Travelled: 6
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:41:31
+Race Status: Win
+Race length: 14
+Winner: ice spirit
+Participants:
+ice spirit Fallen: false Distance Travelled: 14
+egiant Fallen: false Distance Travelled: 4
+log Fallen: false Distance Travelled: 11
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:43:03
+Race Status: Win
+Race length: 13
+Winner: log
+Participants:
+ice spirit Fallen: true Distance Travelled: 12
+egiant Fallen: false Distance Travelled: 6
+log Fallen: false Distance Travelled: 13
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:43:33
+Race Status: Win
+Race length: 13
+Winner: ice spirit
+Participants:
+ice spirit Fallen: false Distance Travelled: 13
+egiant Fallen: false Distance Travelled: 3
+log Fallen: true Distance Travelled: 11
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:47:26
+Race Status: Win
+Race length: 11
+Winner: wizard
+Participants:
+ebarbs Fallen: true Distance Travelled: 10
+wizard Fallen: false Distance Travelled: 11
+hog rider Fallen: false Distance Travelled: 10
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:47:52
+Race Status: Win
+Race length: 11
+Winner: hog rider
+Participants:
+ebarbs Fallen: false Distance Travelled: 8
+wizard Fallen: true Distance Travelled: 5
+hog rider Fallen: false Distance Travelled: 11
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 06:54:55
+Race Status: Win
+Race length: 8
+Winner: wizard
+Participants:
+wizard Fallen: false Distance Travelled: 8
+hog rider Fallen: false Distance Travelled: 6
+log Fallen: true Distance Travelled: 2
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 07:01:25
+Race Status: Win
+Race length: 15
+Winner: hog rider
+Participants:
+egiant Fallen: false Distance Travelled: 12
+log Fallen: false Distance Travelled: 10
+hog rider Fallen: false Distance Travelled: 15
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 07:01:40
+Race Status: Win
+Race length: 15
+Winner: log
+Participants:
+egiant Fallen: false Distance Travelled: 8
+log Fallen: false Distance Travelled: 15
+hog rider Fallen: true Distance Travelled: 8
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 07:11:21
+Race Status: Win
+Race length: 14
+Winner: wizard
+Participants:
+ebarbs Fallen: true Distance Travelled: 5
+wizard Fallen: false Distance Travelled: 14
+hog rider Fallen: true Distance Travelled: 1
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 07:11:43
+Race Status: Win
+Race length: 13
+Winner: ebarbs
+Participants:
+wizard Fallen: true Distance Travelled: 8
+hog rider Fallen: true Distance Travelled: 9
+ebarbs Fallen: false Distance Travelled: 13
+-------------------------------------------------------
+
+
+Race Details
+Date: 2024-04-26 07:12:06
+Race Status: Draw
+Race length: 1
+Drawers: wizard
+log
+Participants:
+wizard Fallen: false Distance Travelled: 1
+hog rider Fallen: false Distance Travelled: 0
+log Fallen: false Distance Travelled: 1
+-------------------------------------------------------
+

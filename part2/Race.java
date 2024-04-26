@@ -60,11 +60,7 @@ public class Race {
         horses[numHorses] = theHorse;
         numHorses++;
 
-        String oldHorse = theHorse.getName() + "," + theHorse.getSymbol() + "," + theHorse.getConfidence() + "," +
-                        theHorse.getColor() + "," + theHorse.getBreed() + "," + theHorse.getAccessories() + "," + 
-                        theHorse.getAvrgSpeed() + "," + theHorse.getWinRatio();
 
-        oldHorseDetails.add(oldHorse);
     }
 
     
@@ -82,6 +78,18 @@ public class Race {
         if (numHorses < 2) {
             throw new IllegalArgumentException("Minimum of 2 horses required to start the race.");
         }
+
+        // Add horse details to the oldHorseDetails ArrayList
+        for (int i = 0; i < numHorses; i++) {
+            String oldHorse = horses[i].getName() + "," + horses[i].getSymbol() + "," + horses[i].getConfidence() + "," +
+                    horses[i].getColor() + "," + horses[i].getBreed() + "," + horses[i].getAccessories() + "," +
+                    horses[i].getAvrgSpeed() + "," + horses[i].getWinRatio();
+
+            oldHorseDetails.add(oldHorse);
+        }
+
+        System.out.println(oldHorseDetails);
+
 
         for (int i = 0; i < numHorses; i++) {
             horses[i].goBackToStart();
@@ -152,6 +160,7 @@ public class Race {
                         Math.round(horses[i].getAvrgSpeed()*100.0)/100.0 + "," + Math.round(horses[i].getWinRatio()*100.0)/100.0;
 
                         updateHorseInFile((String) oldHorseDetails.get(i), updatedHorse);
+                        System.out.println(updatedHorse);
 
                     }
                     
@@ -294,19 +303,15 @@ public class Race {
     }
 
     private void updateHorseInFile(String oldHorse, String updatedHorse) {
-
         String directoryPath = "part2" + File.separator;
         File filePath = new File(directoryPath + "horseDetails.txt");
         File tempFile = new File(directoryPath + "tempHorseDetails.txt");
     
         try (BufferedReader br = new BufferedReader(new FileReader(filePath));
              BufferedWriter bw = new BufferedWriter(new FileWriter(tempFile))) {
-                
     
             String line;
-            
             while ((line = br.readLine()) != null) {
-
                 if (line.equals(oldHorse)) {
                     bw.write(updatedHorse);
                 } else {
@@ -318,16 +323,11 @@ public class Race {
             e.printStackTrace();
         }
     
-        // Delete the original file
-        File oldFile = new File(filePath.getPath());
-        if (!oldFile.delete()) {
+        // Replace the original file with the updated one
+        if (!filePath.delete()) {
             System.out.println("Could not delete original file.");
-            return;
         }
-    
-        // Rename the temp file to the original file name
-        File newFile = new File(tempFile.getPath());
-        if (!newFile.renameTo(oldFile)) {
+        if (!tempFile.renameTo(filePath)) {
             System.out.println("Could not rename temp file to original file name.");
         }
     }
@@ -402,6 +402,7 @@ private void decreaseWinRatio(Horse theHorse) {
 
 
     private void increaseConfidence(Horse theHorse) {
+
         double newConfidence = theHorse.getConfidence() + 0.05;
         double roundedConfidence = Math.min(Math.round(newConfidence * 100.0) / 100.0, 0.99);
         theHorse.setConfidence(roundedConfidence);
@@ -434,6 +435,7 @@ private void decreaseWinRatio(Horse theHorse) {
         if (!theHorse.hasFallen()) {
             if (Math.random() < theHorse.getConfidence()) {
                 theHorse.moveForward();
+
             }
 
             if (Math.random() < (0.1 * theHorse.getConfidence() * theHorse.getConfidence())) {
@@ -468,8 +470,10 @@ private void decreaseWinRatio(Horse theHorse) {
     public static class RaceWindow extends JFrame {
         private static final long serialVersionUID = 1L;
         JTextArea raceTextArea;
+        JDialog createRaceDialog;
 
-        public RaceWindow() {
+        public RaceWindow(JDialog createRaceDialog) {
+            this.createRaceDialog = createRaceDialog;            
             setTitle("Horse Race");
             setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             setSize(600, 400);
@@ -486,6 +490,8 @@ private void decreaseWinRatio(Horse theHorse) {
             closeButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     dispose();
+                    createRaceDialog.dispose(); // Close the Create Race dialog
+
                 }
             });
 
