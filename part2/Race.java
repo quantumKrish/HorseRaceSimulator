@@ -49,6 +49,7 @@ public class Race {
      * @param theHorse the horse to be added to the race
      */
     public void addHorse(Horse theHorse) {
+
         if (numHorses >= MAX_HORSES) {
             throw new IllegalArgumentException("Cannot add more than " + MAX_HORSES + " horses.");
         }
@@ -59,11 +60,8 @@ public class Race {
 
         horses[numHorses] = theHorse;
         numHorses++;
-
-
     }
 
-    
 
     /**
      * Start the race
@@ -73,7 +71,6 @@ public class Race {
      */
     public void startRace(JTextArea raceTextArea) {
         this.raceTextArea = raceTextArea;
-
 
         if (numHorses < 2) {
             throw new IllegalArgumentException("Minimum of 2 horses required to start the race.");
@@ -87,9 +84,6 @@ public class Race {
 
             oldHorseDetails.add(oldHorse);
         }
-
-        System.out.println(oldHorseDetails);
-
 
         for (int i = 0; i < numHorses; i++) {
             horses[i].goBackToStart();
@@ -119,18 +113,23 @@ public class Race {
 
                 List<Horse> finishedHorses = new ArrayList<>();
                 for (int i = 0; i < numHorses; i++) {
+
                     if (raceWonBy(horses[i])) {
                         finishedHorses.add(horses[i]);
                     }
                 }
 
+                // If there is only one horse that has won
                 if (finishedHorses.size() == 1) {
+
                     finished = true;
                     Horse winner = finishedHorses.get(0);
                     appendToRaceWindow("And the winner is: " + winner.getName());
                     updateRaceWinDetails(finishedHorses, horses);
                     increaseConfidence(winner);
                     increaseWinRatio(winner);
+
+                // If there are multiple that won
                 } else if (finishedHorses.size() > 1) {
                     finished = true;
                     appendToRaceWindow("It's a draw between:");
@@ -149,6 +148,7 @@ public class Race {
                 }
 
                 if (!finished) {
+
                     clearRaceWindow();
                 } else {
                     
@@ -163,10 +163,9 @@ public class Race {
                         System.out.println(updatedHorse);
 
                     }
-                    
-
                 }
             }
+
         }).start();
     }
 
@@ -191,37 +190,37 @@ public class Race {
             writer.newLine();
             writer.write("Race length: " + raceLength);
             writer.newLine();
-
-
             writer.write("Participants:");
             writer.newLine();
-
 
             for (int i = 0; i < numHorses; i++) {
                 writer.write(horses[i].getName() + " Fallen: " + horses[i].hasFallen() + " Distance Travelled: " + horses[i].getDistanceTravelled());
                 writer.newLine();
-
             }
+
             writer.write("-------------------------------------------------------");
             writer.newLine();
-
             writer.newLine();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    
     public void updateRaceDrawDetails(List<Horse> finishedHorses, Horse horses[]) {
+
         String directoryPath = "part2" + File.separator;
         File raceFile = new File(directoryPath + "raceDetails.txt");    
+
         // Get the current date and time
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String formattedDateTime = now.format(formatter);
     
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(raceFile, true))) {
-            writer.newLine();
 
+            writer.newLine();
             writer.write("Race Details");
             writer.newLine();
             writer.write("Date: " + formattedDateTime);
@@ -230,7 +229,6 @@ public class Race {
             writer.newLine();
             writer.write("Race length: " + raceLength);
             writer.newLine();
-
             writer.write("Drawers: ");
 
             for (Horse horse : finishedHorses) {
@@ -240,13 +238,13 @@ public class Race {
             }
 
             writer.write("Participants:");
-
             writer.newLine();
 
             for (int i = 0; i < numHorses; i++) {
                 writer.write(horses[i].getName() + " Fallen: " + horses[i].hasFallen() + " Distance Travelled: " + horses[i].getDistanceTravelled());
                 writer.newLine();
             }
+
             writer.write("-------------------------------------------------------");
             writer.newLine();
             writer.newLine();
@@ -258,6 +256,7 @@ public class Race {
             
 
     public void updateRaceWinDetails(List<Horse> finishedHorses, Horse horses[]) {
+
         String directoryPath = "part2" + File.separator;
         File raceFile = new File(directoryPath + "raceDetails.txt");    
         // Get the current date and time
@@ -266,8 +265,8 @@ public class Race {
         String formattedDateTime = now.format(formatter);
     
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(raceFile, true))) {
-            writer.newLine();
 
+            writer.newLine();
             writer.write("Race Details");
             writer.newLine();
             writer.write("Date: " + formattedDateTime);
@@ -280,10 +279,9 @@ public class Race {
             for (Horse horse : finishedHorses) {
 
                 writer.write("Winner: " + horse.getName());
-
             }
-            writer.newLine();
 
+            writer.newLine();
             writer.write("Participants:");
             writer.newLine();
 
@@ -291,18 +289,20 @@ public class Race {
             for (int i = 0; i < numHorses; i++) {
                 writer.write(horses[i].getName() + " Fallen: " + horses[i].hasFallen() + " Distance Travelled: " + horses[i].getDistanceTravelled());
                 writer.newLine();
-
             }
+
             writer.write("-------------------------------------------------------");
-            writer.newLine();
 
             writer.newLine();
+            writer.newLine();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private void updateHorseInFile(String oldHorse, String updatedHorse) {
+
         String directoryPath = "part2" + File.separator;
         File filePath = new File(directoryPath + "horseDetails.txt");
         File tempFile = new File(directoryPath + "tempHorseDetails.txt");
@@ -311,6 +311,7 @@ public class Race {
              BufferedWriter bw = new BufferedWriter(new FileWriter(tempFile))) {
     
             String line;
+
             while ((line = br.readLine()) != null) {
                 if (line.equals(oldHorse)) {
                     bw.write(updatedHorse);
@@ -332,14 +333,10 @@ public class Race {
         }
     }
 
-    /**
-     * Calculate speed based on horse's confidence.
-     * Higher confidence leads to a faster speed.
-     *
-     * @param confidence The confidence of the horse (between 0 and 1)
-     * @return The calculated speed
-     */
+
+    // Method to calculate the average speed of the horse based on its confidence level
     private void calculateAvrgSpeed(Horse theHorse) {
+
         double confidence = theHorse.getConfidence();
         double minSpeed = 5.0;  // Minimum speed
         double maxSpeed = 45.0; // Maximum speed
@@ -357,50 +354,40 @@ public class Race {
         theHorse.setAvrgSpeed(speed);
     }
 
-/**
- * Calculate new win ratio based on horse's current win ratio.
- * Higher current win ratio leads to a better chance of winning again.
- *
- * @param currentWinRatio The current win ratio of the horse (between 0 and 1)
- * @param wonRace Whether the horse won the race (true if won, false otherwise)
- * @return The updated win ratio
- */
-private void increaseWinRatio(Horse theHorse) {
-    // If the horse won the race, increase its win ratio
-    // If the horse didn't win, decrease its win ratio
-    double currentWinRatio = theHorse.getWinRatio();
-    
-    // Increase win ratio
-    currentWinRatio += 0.05;
 
-    
-    // Ensure win ratio stays within a reasonable range
-    if (currentWinRatio > 1.0) {
+    // Method to increase the win ratio of a horse
+    private void increaseWinRatio(Horse theHorse) {
+
+        double currentWinRatio = theHorse.getWinRatio();
+        
+        // Increase win ratio
+        currentWinRatio += 0.05;
+
+        // Ensure win ratio stays within a reasonable range
+        if (currentWinRatio > 1.0) {
             currentWinRatio = 1.0;
-    }
-    
-    theHorse.setWinRatio(currentWinRatio);
-}
-
-private void decreaseWinRatio(Horse theHorse) {
-    
-    double currentWinRatio = theHorse.getWinRatio();
-
-    // Decrease win ratio
-    currentWinRatio -= 0.05;
-
-    // Ensure win ratio stays within a reasonable range
-    if (currentWinRatio < 0.0) {
-        currentWinRatio = 0.0;
+        }
+        
+        theHorse.setWinRatio(currentWinRatio);
     }
 
-    theHorse.setWinRatio(currentWinRatio);
-}
+    // Method to decrease the win ratio of a horse
+    private void decreaseWinRatio(Horse theHorse) {
+        
+        double currentWinRatio = theHorse.getWinRatio();
 
+        // Decrease win ratio
+        currentWinRatio -= 0.05;
 
+        // Ensure win ratio stays within a reasonable range
+        if (currentWinRatio < 0.0) {
+            currentWinRatio = 0.0;
+        }
 
+        theHorse.setWinRatio(currentWinRatio);
+    }
 
-
+    // Method to increase the confidence of a horse
     private void increaseConfidence(Horse theHorse) {
 
         double newConfidence = theHorse.getConfidence() + 0.05;
@@ -413,14 +400,18 @@ private void decreaseWinRatio(Horse theHorse) {
         raceStatus.append("Race Status:\n");
 
         for (int i = 0; i < numHorses; i++) {
+
             raceStatus.append(horses[i].getName()).append(": ");
             for (int j = 0; j < raceLength; j++) {
+
                 if (j == horses[i].getDistanceTravelled()) {
+
                     if (horses[i].hasFallen()) {
                         raceStatus.append("X");
                     } else {
                         raceStatus.append(horses[i].getSymbol());
                     }
+
                 } else {
                     raceStatus.append("-");
                 }
@@ -431,6 +422,7 @@ private void decreaseWinRatio(Horse theHorse) {
         appendToRaceWindow(raceStatus.toString());
     }
 
+    // Method to move the horse forward and check if it has fallen
     private void moveHorse(Horse theHorse) {
         if (!theHorse.hasFallen()) {
             if (Math.random() < theHorse.getConfidence()) {
@@ -464,15 +456,15 @@ private void decreaseWinRatio(Horse theHorse) {
         }
     }
 
-    /**
-     * Race Window to display the race
-     */
+    // Method to create a the racing window
     public static class RaceWindow extends JFrame {
+
         private static final long serialVersionUID = 1L;
         JTextArea raceTextArea;
         JDialog createRaceDialog;
 
         public RaceWindow(JDialog createRaceDialog) {
+            
             this.createRaceDialog = createRaceDialog;            
             setTitle("Horse Race");
             setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -487,11 +479,11 @@ private void decreaseWinRatio(Horse theHorse) {
             getContentPane().add(scrollPane, BorderLayout.CENTER);
 
             JButton closeButton = new JButton("Close Race");
+
             closeButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     dispose();
                     createRaceDialog.dispose(); // Close the Create Race dialog
-
                 }
             });
 
@@ -507,6 +499,4 @@ private void decreaseWinRatio(Horse theHorse) {
             });
         }
     }
-
-        
 }
