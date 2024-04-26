@@ -21,7 +21,7 @@ Once you've created and customised your new horses you can race them, do this by
 
 When the race has started the a new window will pop up with the animated race gui: once a horse or horses finish, or all horses fall over, the race will stop and the outcome will be resulted. The race details will also be logged on the raceDetails.txt file moreover, the win ratio ratio confidence and average speed of each horse will be updated in the horseDetails.txt file. 
 
-<h1> Dependencies <h1>
+<h1> Dependencies </h1>
 
 Make sure that the most recent JDK is installed on your computer.
 Optionally but recommended, use an IDE to run the program such as VSCode. 
