@@ -160,8 +160,6 @@ public class Race {
                         Math.round(horses[i].getAvrgSpeed()*100.0)/100.0 + "," + Math.round(horses[i].getWinRatio()*100.0)/100.0;
 
                         updateHorseInFile((String) oldHorseDetails.get(i), updatedHorse);
-                        System.out.println(updatedHorse);
-
                     }
                 }
             }

@@ -1194,3 +1194,18 @@ hog rider Fallen: false Distance Travelled: 0
 log Fallen: false Distance Travelled: 1
 -------------------------------------------------------
 
+
+Race Details
+Date: 2024-04-26 10:24:50
+Race Status: Win
+Race length: 19
+Winner: mega knight
+Participants:
+wizard Fallen: true Distance Travelled: 11
+mega knight Fallen: false Distance Travelled: 19
+hog rider Fallen: true Distance Travelled: 8
+log Fallen: true Distance Travelled: 8
+goblin Fallen: true Distance Travelled: 3
+ice spirit Fallen: true Distance Travelled: 2
+-------------------------------------------------------
+
