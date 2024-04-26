@@ -1,7 +1,7 @@
 
-
 /**
  * Horse class contains the fields and methods for the horse object
+ * 
  * 
  * @author Kirishanth Pirathapan 
  * @version (18/03/2024)
@@ -10,19 +10,31 @@ public class Horse {
 
     // Fields of class Horse
     private String name;
-    private char symbol;
+    private String symbol;
     private int distance;
     private boolean fallen;
     private double confidence;
+    private String color;
+    private String breed;
+    private String accessories;
+    private double avrgSpeed;
+    private double winRatio;
+
 
     // Constructor for objects of class Horse
-    public Horse(char horseSymbol, String horseName, double horseConfidence) {
+    public Horse(String horseName, String horseSymbol, double horseConfidence, String horseColor, String horseBreed, 
+    String horseAccessories, double horseAvrgSpeed, double horseWinRatio) {
 
         setSymbol(horseSymbol);
         setName(horseName);
         setConfidence(horseConfidence);
         goBackToStart();
         fallen = false;
+        setColor(horseColor);
+        setBreed(horseBreed);
+        setAccessories(horseAccessories);
+        setAvrgSpeed(horseAvrgSpeed);
+        setWinRatio(horseWinRatio);
 
     }
 
@@ -58,7 +70,7 @@ public class Horse {
         return name;
     }
 
-    public char getSymbol() {
+    public String getSymbol() {
 
         return symbol;
     }
@@ -86,7 +98,7 @@ public class Horse {
         }
     }
 
-    public void setSymbol(char horseSymbol) {
+    public void setSymbol(String horseSymbol) {
 
         this.symbol = horseSymbol;
     }
@@ -104,4 +116,55 @@ public class Horse {
             throw new IllegalArgumentException("Name cannot be null or empty");
         }
     }
+
+    public String getColor() {
+
+        return color;
+    }
+
+    public String getBreed() {
+
+        return breed;
+    }
+
+    public String getAccessories() {
+
+        return accessories;
+    }
+
+    public double getAvrgSpeed() {
+
+        return avrgSpeed;
+    }
+
+    public double getWinRatio() {
+
+        return winRatio;
+    }
+
+    public void setColor(String horseColor) {
+
+        this.color = horseColor;
+    }
+
+    public void setBreed(String horseBreed) {
+
+        this.breed = horseBreed;
+    }
+
+    public void setAccessories(String horseAccessories) {
+
+        this.accessories = horseAccessories;
+    }
+
+    public void setAvrgSpeed(double horseAvrgSpeed) {
+
+        this.avrgSpeed = horseAvrgSpeed;
+    }
+
+    public void setWinRatio(double horseWinRatio) {
+
+        this.winRatio = horseWinRatio;
+    }
+
 }

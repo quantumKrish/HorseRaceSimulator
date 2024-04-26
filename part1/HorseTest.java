@@ -1,4 +1,4 @@
-package horseRacingSim.part1;
+package part1;
 
 public class HorseTest {
 

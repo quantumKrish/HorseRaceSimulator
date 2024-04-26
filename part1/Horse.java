@@ -1,4 +1,5 @@
-package horseRacingSim.part1;
+package part1;
+
 
 /**
  * Horse class contains the fields and methods for the horse object
@@ -34,7 +35,6 @@ public class Horse {
         double newConfidence = confidence - 0.05;
         double roundedConfidence = Math.max(Math.round(newConfidence * 100.0) / 100.0, 0.01);
         confidence = roundedConfidence;
-        
         return fallen;
     }
 
@@ -103,5 +103,23 @@ public class Horse {
 
             throw new IllegalArgumentException("Name cannot be null or empty");
         }
+    }
+
+    public static void main(String[] args) {
+
+        Race race = new Race(15);
+
+        // Create three horses and add them to the race
+        Horse horse1 = new Horse('A', "Thunder", 0.7);
+        Horse horse2 = new Horse('B', "Lightning", 0.8);
+        Horse horse3 = new Horse('C', "Storm", 0.6); 
+
+        race.addHorse(horse1, 1); // Add horse1 to lane 1
+        race.addHorse(horse2, 2); // Add horse2 to lane 2
+        race.addHorse(horse3, 3); // Add horse3 to lane 3
+
+
+        // Start the race
+        race.startRace();
     }
 }
