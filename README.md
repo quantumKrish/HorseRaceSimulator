@@ -1,8 +1,5 @@
 # HorseRaceSimulator
 
-<h1>Horse Race Simulator</h1>
-
-
 <h3> Program Description </h3>
 
 This program simulates a horse race where users can add their own horses and distance of the race then race them. They can customise them by choosing from several breeds, colours, accessories, names and symbols and condifence levels. 
@@ -23,7 +20,7 @@ Once you've created and customised your new horses you can race them, do this by
 
 When the race has started the a new window will pop up with the animated race gui: once a horse or horses finish, or all horses fall over, the race will stop and the outcome will be resulted. The race details will also be logged on the raceDetails.txt file moreover, the win ratio ratio confidence and average speed of each horse will be updated in the horseDetails.txt file. 
 
-<h3> Dependencies <h3>
+<h3> Dependencies </h3>
 
 Make sure that the most recent JDK is installed on your computer.
 Optionally but recommended, use an IDE to run the program such as VSCode. 
